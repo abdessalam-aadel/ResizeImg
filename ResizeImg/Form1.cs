@@ -4,20 +4,59 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
-using System.Threading;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Drawing.Text;
 
 namespace ResizeImg
 {
     public partial class FrmMain : Form
     {
+        // call gdi32.dll
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
+        FontFamily ff;
+
         // Array of TIF Files found in Folder
         string[] IMGfiles;
         // Creat variable to Counting the number of files in a folder 
         int fileCount = 0;
         string selected_path;
 
-        public FrmMain() => InitializeComponent();
+
+        private void AddPrivateFontCollection()
+        {
+            // Create the byte array and get its length
+            byte[] fontArray = Properties.Resources.Blanche_de_la_Fontaine;
+            int dataLength = Properties.Resources.Blanche_de_la_Fontaine.Length;
+
+            // Assign memory and copy byte[] on that memory address
+            IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
+
+            // Copying the fontdata into the memory designated by the pointer
+            Marshal.Copy(fontArray, 0, ptrData, dataLength);
+
+            uint cFonts = 0;
+
+            // Register the font with the system.
+            AddFontMemResourceEx(ptrData, (uint)fontArray.Length, IntPtr.Zero, ref cFonts);
+
+            PrivateFontCollection pfc = new PrivateFontCollection();
+
+            // pass the font to the PRIVATEFONTCOLLECTION object
+            // Finally, we can actually add the font to our collection
+            pfc.AddMemoryFont(ptrData, dataLength);
+
+            // FREE THE "UNSAFE" MEMORY
+            Marshal.FreeCoTaskMem(ptrData);
+
+            ff = pfc.Families[0];
+        }
+
+        public FrmMain()
+        {
+            InitializeComponent();
+        }
 
         // Handle Methode Search Directory and Get all TIF files found,
         // and bring out to Array of string
@@ -159,11 +198,8 @@ namespace ResizeImg
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-            privateFonts.AddFontFile(@"Font\Blanche de la Fontaine.ttf");
-            Font font = new Font(privateFonts.Families[0], 24);
-
-            BtnStart.Font = font;
+            AddPrivateFontCollection();
+            BtnStart.Font = new Font(ff, 24, FontStyle.Underline);
         }
     }
 }
