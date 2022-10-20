@@ -55,7 +55,7 @@
             this.BtnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnStart.FlatAppearance.BorderSize = 2;
             this.BtnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnStart.Font = new System.Drawing.Font("Blanche de la Fontaine", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnStart.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.BtnStart.Location = new System.Drawing.Point(12, 56);
             this.BtnStart.Name = "BtnStart";
@@ -252,6 +252,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resize images";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImgDone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoToGithub)).EndInit();
             this.ResumeLayout(false);

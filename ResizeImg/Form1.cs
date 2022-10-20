@@ -156,5 +156,14 @@ namespace ResizeImg
             // Go to github repo
             Process.Start("https://github.com/abdessalam-aadel");
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+            privateFonts.AddFontFile(@"Font\Blanche de la Fontaine.ttf");
+            Font font = new Font(privateFonts.Families[0], 24);
+
+            BtnStart.Font = font;
+        }
     }
 }
