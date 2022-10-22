@@ -45,8 +45,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.ImgDone = new System.Windows.Forms.PictureBox();
             this.GoToGithub = new System.Windows.Forms.PictureBox();
+            this.RdButtonSQ = new System.Windows.Forms.RadioButton();
+            this.RdButtonHQ = new System.Windows.Forms.RadioButton();
+            this.PanelQuality = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ImgDone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoToGithub)).BeginInit();
+            this.PanelQuality.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnStart
@@ -90,7 +94,7 @@
             // 
             this.TxtTotales.AutoSize = true;
             this.TxtTotales.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.TxtTotales.Location = new System.Drawing.Point(258, 115);
+            this.TxtTotales.Location = new System.Drawing.Point(258, 139);
             this.TxtTotales.Name = "TxtTotales";
             this.TxtTotales.Size = new System.Drawing.Size(16, 13);
             this.TxtTotales.TabIndex = 3;
@@ -100,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(193, 115);
+            this.label1.Location = new System.Drawing.Point(193, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 4;
@@ -111,7 +115,7 @@
             this.LabelDone.AutoSize = true;
             this.LabelDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelDone.ForeColor = System.Drawing.Color.Maroon;
-            this.LabelDone.Location = new System.Drawing.Point(362, 117);
+            this.LabelDone.Location = new System.Drawing.Point(362, 141);
             this.LabelDone.Name = "LabelDone";
             this.LabelDone.Size = new System.Drawing.Size(0, 13);
             this.LabelDone.TabIndex = 5;
@@ -196,7 +200,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(2, 123);
+            this.label7.Location = new System.Drawing.Point(2, 145);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 13);
             this.label7.TabIndex = 14;
@@ -205,7 +209,7 @@
             // ImgDone
             // 
             this.ImgDone.Image = ((System.Drawing.Image)(resources.GetObject("ImgDone.Image")));
-            this.ImgDone.Location = new System.Drawing.Point(395, 115);
+            this.ImgDone.Location = new System.Drawing.Point(395, 139);
             this.ImgDone.Name = "ImgDone";
             this.ImgDone.Size = new System.Drawing.Size(17, 16);
             this.ImgDone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -217,7 +221,7 @@
             // 
             this.GoToGithub.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GoToGithub.Image = ((System.Drawing.Image)(resources.GetObject("GoToGithub.Image")));
-            this.GoToGithub.Location = new System.Drawing.Point(448, 120);
+            this.GoToGithub.Location = new System.Drawing.Point(446, 139);
             this.GoToGithub.Name = "GoToGithub";
             this.GoToGithub.Size = new System.Drawing.Size(17, 16);
             this.GoToGithub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -225,11 +229,48 @@
             this.GoToGithub.TabStop = false;
             this.GoToGithub.Click += new System.EventHandler(this.GoToGithub_Click);
             // 
+            // RdButtonSQ
+            // 
+            this.RdButtonSQ.AutoSize = true;
+            this.RdButtonSQ.Checked = true;
+            this.RdButtonSQ.ForeColor = System.Drawing.Color.DimGray;
+            this.RdButtonSQ.Location = new System.Drawing.Point(3, 4);
+            this.RdButtonSQ.Name = "RdButtonSQ";
+            this.RdButtonSQ.Size = new System.Drawing.Size(103, 17);
+            this.RdButtonSQ.TabIndex = 17;
+            this.RdButtonSQ.TabStop = true;
+            this.RdButtonSQ.Text = "Standard Quality";
+            this.RdButtonSQ.UseVisualStyleBackColor = true;
+            this.RdButtonSQ.CheckedChanged += new System.EventHandler(this.RdButtonSQ_CheckedChanged);
+            // 
+            // RdButtonHQ
+            // 
+            this.RdButtonHQ.AutoSize = true;
+            this.RdButtonHQ.ForeColor = System.Drawing.Color.OrangeRed;
+            this.RdButtonHQ.Location = new System.Drawing.Point(112, 3);
+            this.RdButtonHQ.Name = "RdButtonHQ";
+            this.RdButtonHQ.Size = new System.Drawing.Size(85, 17);
+            this.RdButtonHQ.TabIndex = 18;
+            this.RdButtonHQ.Text = "Hight Quality";
+            this.RdButtonHQ.UseVisualStyleBackColor = true;
+            // 
+            // PanelQuality
+            // 
+            this.PanelQuality.BackColor = System.Drawing.Color.Transparent;
+            this.PanelQuality.Controls.Add(this.RdButtonHQ);
+            this.PanelQuality.Controls.Add(this.RdButtonSQ);
+            this.PanelQuality.Location = new System.Drawing.Point(12, 114);
+            this.PanelQuality.Name = "PanelQuality";
+            this.PanelQuality.Size = new System.Drawing.Size(208, 24);
+            this.PanelQuality.TabIndex = 19;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 140);
+            this.ClientSize = new System.Drawing.Size(471, 163);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PanelQuality);
             this.Controls.Add(this.GoToGithub);
             this.Controls.Add(this.ImgDone);
             this.Controls.Add(this.label7);
@@ -239,7 +280,6 @@
             this.Controls.Add(this.TxtH);
             this.Controls.Add(this.TxtW);
             this.Controls.Add(this.LabelDone);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtTotales);
             this.Controls.Add(this.TxtBoxLoad);
             this.Controls.Add(this.BtnLoad);
@@ -255,6 +295,8 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImgDone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoToGithub)).EndInit();
+            this.PanelQuality.ResumeLayout(false);
+            this.PanelQuality.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,6 +320,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox ImgDone;
         private System.Windows.Forms.PictureBox GoToGithub;
+        private System.Windows.Forms.RadioButton RdButtonSQ;
+        private System.Windows.Forms.RadioButton RdButtonHQ;
+        private System.Windows.Forms.Panel PanelQuality;
     }
 }
 

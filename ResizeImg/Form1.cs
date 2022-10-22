@@ -17,13 +17,15 @@ namespace ResizeImg
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
         FontFamily ff;
 
-        // Array of TIF Files found in Folder
+        // Array of TIF Files found in sub Folder
         string[] IMGfiles;
-        // Creat variable to Counting the number of files in a folder 
+        // Create integer variable to Counting the number of files in sub folder 
         int fileCount = 0;
         string selected_path;
 
-
+        // Create boolean variable to check if the radio button is checked or not
+        bool IsCheckedSQ = true;
+        
         private void AddPrivateFontCollection()
         {
             // Create the byte array and get its length
@@ -53,10 +55,7 @@ namespace ResizeImg
             ff = pfc.Families[0];
         }
 
-        public FrmMain()
-        {
-            InitializeComponent();
-        }
+        public FrmMain() => InitializeComponent();
 
         // Handle Methode Search Directory and Get all TIF files found,
         // and bring out to Array of string
@@ -89,14 +88,17 @@ namespace ResizeImg
                     Bitmap b = new Bitmap(img);
                     // Get the current image width  
                     int sourceWidth = b.Width;
+                    Image i;
                     // skip over
                     // continues with the next iteration of the loop for-each
                     // if the image width < 3000 pixel
-                    if (sourceWidth < 3000)
-                        continue;
-
-                    Image i = ResizeImg(b, new Size(W, H));
-                    //Image i = ResizeImage3(b, W, H);
+                    //if (sourceWidth < 3000)
+                    //    continue;
+                    if (IsCheckedSQ)
+                        i = ResizeImgSQ(b, new Size(W, H));
+                    else
+                        i = ResizeImageHQ(b, W, H);
+                    
                     // Releases all reesources
                     b.Dispose();
                     img.Dispose();
@@ -115,40 +117,11 @@ namespace ResizeImg
             }
         }
 
-        public static Image ResizeImg(Image imgToResize, Size size) => (Image)(new Bitmap(imgToResize, size));
+        // Methode Resize image for Standard Quality
+        public static Image ResizeImgSQ(Image imgToResize, Size size) => (Image)(new Bitmap(imgToResize, size));
 
-        // other methode to reserve quality of image
-        private static Image ResizeImage2(Image imgToResize, Size size)
-        {
-            //Get the image current width  
-            int sourceWidth = imgToResize.Width;
-            //Get the image current height  
-            int sourceHeight = imgToResize.Height;
-            float nPercent = 0;
-            float nPercentW = 0;
-            float nPercentH = 0;
-            //Calulate  width with new desired size  
-            nPercentW = ((float)size.Width / (float)sourceWidth);
-            //Calculate height with new desired size  
-            nPercentH = ((float)size.Height / (float)sourceHeight);
-            if (nPercentH < nPercentW)
-                nPercent = nPercentH;
-            else
-                nPercent = nPercentW;
-            //New Width  
-            int destWidth = (int)(sourceWidth * nPercent);
-            //New Height  
-            int destHeight = (int)(sourceHeight * nPercent);
-            Bitmap b = new Bitmap(destWidth, destHeight);
-            Graphics g = Graphics.FromImage((Image)b);
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            // Draw image with new width and height  
-            g.DrawImage(imgToResize, 0, 0, destWidth, destHeight);
-            g.Dispose();
-            return (Image)b;
-        }
-        
-        public static Bitmap ResizeImage3(Image image, int width, int height)
+        // Methode Resize image for Hight Quality
+        public static Bitmap ResizeImageHQ(Image image, int width, int height)
         {
             var destRect = new Rectangle(0, 0, width, height);
             var destImage = new Bitmap(width, height);
@@ -169,7 +142,6 @@ namespace ResizeImg
                     graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
                 }
             }
-
             return destImage;
         }
 
@@ -193,13 +165,21 @@ namespace ResizeImg
         private void GoToGithub_Click(object sender, EventArgs e)
         {
             // Go to github repo
-            Process.Start("https://github.com/abdessalam-aadel");
+            Process.Start("https://github.com/abdessalam-aadel/ResizeImg");
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
             AddPrivateFontCollection();
             BtnStart.Font = new Font(ff, 24, FontStyle.Underline);
+        }
+
+        private void RdButtonSQ_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RdButtonSQ.Checked)
+                IsCheckedSQ = true;
+            else
+                IsCheckedSQ = false;
         }
     }
 }
