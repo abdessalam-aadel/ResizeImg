@@ -48,6 +48,8 @@
             this.RdButtonSQ = new System.Windows.Forms.RadioButton();
             this.RdButtonHQ = new System.Windows.Forms.RadioButton();
             this.PanelQuality = new System.Windows.Forms.Panel();
+            this.CheckBoxCond = new System.Windows.Forms.CheckBox();
+            this.TxtBoxWCond = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImgDone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoToGithub)).BeginInit();
             this.PanelQuality.SuspendLayout();
@@ -202,9 +204,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label7.Location = new System.Drawing.Point(2, 145);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 13);
+            this.label7.Size = new System.Drawing.Size(151, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Copyright Abdessalam 2022.";
+            this.label7.Text = "Copyright © Abdessalam 2022.";
             // 
             // ImgDone
             // 
@@ -233,6 +235,8 @@
             // 
             this.RdButtonSQ.AutoSize = true;
             this.RdButtonSQ.Checked = true;
+            this.RdButtonSQ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RdButtonSQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RdButtonSQ.ForeColor = System.Drawing.Color.DimGray;
             this.RdButtonSQ.Location = new System.Drawing.Point(3, 4);
             this.RdButtonSQ.Name = "RdButtonSQ";
@@ -246,10 +250,12 @@
             // RdButtonHQ
             // 
             this.RdButtonHQ.AutoSize = true;
+            this.RdButtonHQ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RdButtonHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RdButtonHQ.ForeColor = System.Drawing.Color.OrangeRed;
             this.RdButtonHQ.Location = new System.Drawing.Point(112, 3);
             this.RdButtonHQ.Name = "RdButtonHQ";
-            this.RdButtonHQ.Size = new System.Drawing.Size(85, 17);
+            this.RdButtonHQ.Size = new System.Drawing.Size(84, 17);
             this.RdButtonHQ.TabIndex = 18;
             this.RdButtonHQ.Text = "Hight Quality";
             this.RdButtonHQ.UseVisualStyleBackColor = true;
@@ -264,11 +270,38 @@
             this.PanelQuality.Size = new System.Drawing.Size(208, 24);
             this.PanelQuality.TabIndex = 19;
             // 
+            // CheckBoxCond
+            // 
+            this.CheckBoxCond.AutoSize = true;
+            this.CheckBoxCond.BackColor = System.Drawing.Color.Transparent;
+            this.CheckBoxCond.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckBoxCond.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckBoxCond.ForeColor = System.Drawing.Color.Navy;
+            this.CheckBoxCond.Location = new System.Drawing.Point(280, 117);
+            this.CheckBoxCond.Name = "CheckBoxCond";
+            this.CheckBoxCond.Size = new System.Drawing.Size(135, 17);
+            this.CheckBoxCond.TabIndex = 20;
+            this.CheckBoxCond.Text = "Add Condition: width < ";
+            this.CheckBoxCond.UseVisualStyleBackColor = false;
+            this.CheckBoxCond.CheckedChanged += new System.EventHandler(this.CheckBoxCond_CheckedChanged);
+            // 
+            // TxtBoxWCond
+            // 
+            this.TxtBoxWCond.Enabled = false;
+            this.TxtBoxWCond.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBoxWCond.Location = new System.Drawing.Point(408, 116);
+            this.TxtBoxWCond.Name = "TxtBoxWCond";
+            this.TxtBoxWCond.Size = new System.Drawing.Size(51, 18);
+            this.TxtBoxWCond.TabIndex = 21;
+            this.TxtBoxWCond.Text = "3000";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 163);
+            this.Controls.Add(this.TxtBoxWCond);
+            this.Controls.Add(this.CheckBoxCond);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PanelQuality);
             this.Controls.Add(this.GoToGithub);
@@ -323,6 +356,8 @@
         private System.Windows.Forms.RadioButton RdButtonSQ;
         private System.Windows.Forms.RadioButton RdButtonHQ;
         private System.Windows.Forms.Panel PanelQuality;
+        private System.Windows.Forms.CheckBox CheckBoxCond;
+        private System.Windows.Forms.TextBox TxtBoxWCond;
     }
 }
 

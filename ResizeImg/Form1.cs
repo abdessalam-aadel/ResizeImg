@@ -25,6 +25,8 @@ namespace ResizeImg
 
         // Create boolean variable to check if the radio button is checked or not
         bool IsCheckedSQ = true;
+        // Create boolean variable to check if the CheckBox (Add condition) is checked or not
+        bool IsCheckedCond = false;
         
         private void AddPrivateFontCollection()
         {
@@ -88,17 +90,16 @@ namespace ResizeImg
                     Bitmap b = new Bitmap(img);
                     // Get the current image width  
                     int sourceWidth = b.Width;
-                    Image i;
+
+                    Image i = IsCheckedSQ ? ResizeImgSQ(b, new Size(W, H)) : ResizeImageHQ(b, W, H);
+
                     // skip over
                     // continues with the next iteration of the loop for-each
-                    // if the image width < 3000 pixel
-                    //if (sourceWidth < 3000)
-                    //    continue;
-                    if (IsCheckedSQ)
-                        i = ResizeImgSQ(b, new Size(W, H));
-                    else
-                        i = ResizeImageHQ(b, W, H);
-                    
+                    // if the image width < 3000 pixel for exemple
+                    if(IsCheckedCond)
+                        if (sourceWidth < Convert.ToInt32(TxtBoxWCond.Text))
+                            continue;
+
                     // Releases all reesources
                     b.Dispose();
                     img.Dispose();
@@ -176,10 +177,21 @@ namespace ResizeImg
 
         private void RdButtonSQ_CheckedChanged(object sender, EventArgs e)
         {
-            if (RdButtonSQ.Checked)
-                IsCheckedSQ = true;
+            IsCheckedSQ = RdButtonSQ.Checked ? true : false;
+        }
+
+        private void CheckBoxCond_CheckedChanged(object sender, EventArgs e)
+        {
+            if(CheckBoxCond.Checked)
+            {
+                IsCheckedCond = true;
+                TxtBoxWCond.Enabled = true;
+            }
             else
-                IsCheckedSQ = false;
+            {
+                IsCheckedCond = false;
+                TxtBoxWCond.Enabled = false;
+            }
         }
     }
 }

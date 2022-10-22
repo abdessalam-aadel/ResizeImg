@@ -82,7 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="folder_imgicon.ico" />
-    <Content Include="imgicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
