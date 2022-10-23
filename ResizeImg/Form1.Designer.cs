@@ -95,6 +95,7 @@
             this.TxtBoxLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBoxLoad.Location = new System.Drawing.Point(53, 12);
             this.TxtBoxLoad.Name = "TxtBoxLoad";
+            this.TxtBoxLoad.ReadOnly = true;
             this.TxtBoxLoad.Size = new System.Drawing.Size(325, 18);
             this.TxtBoxLoad.TabIndex = 4;
             this.TxtBoxLoad.Text = "Chose your folder ...";
