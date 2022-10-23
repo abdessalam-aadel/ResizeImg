@@ -11,4 +11,4 @@ version 1
 
 version 1.1
 
-![v1-1](https://user-images.githubusercontent.com/48380521/197361083-47001d85-e428-443f-8840-8c733366376b.png)
+![newUpdate](https://user-images.githubusercontent.com/48380521/197392054-f5d8a4c8-93f5-4721-aaf9-73ae8510b51d.png)
