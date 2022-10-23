@@ -135,6 +135,7 @@
             this.TxtW.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtW.Location = new System.Drawing.Point(53, 33);
             this.TxtW.Name = "TxtW";
+            this.TxtW.ShortcutsEnabled = false;
             this.TxtW.Size = new System.Drawing.Size(41, 18);
             this.TxtW.TabIndex = 6;
             this.TxtW.Text = "3200";
@@ -145,6 +146,7 @@
             this.TxtH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtH.Location = new System.Drawing.Point(161, 33);
             this.TxtH.Name = "TxtH";
+            this.TxtH.ShortcutsEnabled = false;
             this.TxtH.Size = new System.Drawing.Size(41, 18);
             this.TxtH.TabIndex = 7;
             this.TxtH.Text = "2200";
@@ -302,6 +304,7 @@
             this.TxtBoxWCond.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBoxWCond.Location = new System.Drawing.Point(408, 116);
             this.TxtBoxWCond.Name = "TxtBoxWCond";
+            this.TxtBoxWCond.ShortcutsEnabled = false;
             this.TxtBoxWCond.Size = new System.Drawing.Size(51, 18);
             this.TxtBoxWCond.TabIndex = 12;
             this.TxtBoxWCond.Text = "3000";
