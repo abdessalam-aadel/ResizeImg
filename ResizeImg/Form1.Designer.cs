@@ -138,6 +138,7 @@
             this.TxtW.Size = new System.Drawing.Size(41, 18);
             this.TxtW.TabIndex = 6;
             this.TxtW.Text = "3200";
+            this.TxtW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtW_KeyPress);
             // 
             // TxtH
             // 
@@ -147,6 +148,7 @@
             this.TxtH.Size = new System.Drawing.Size(41, 18);
             this.TxtH.TabIndex = 7;
             this.TxtH.Text = "2200";
+            this.TxtH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtH_KeyPress);
             // 
             // label2
             // 
@@ -303,6 +305,7 @@
             this.TxtBoxWCond.Size = new System.Drawing.Size(51, 18);
             this.TxtBoxWCond.TabIndex = 12;
             this.TxtBoxWCond.Text = "3000";
+            this.TxtBoxWCond.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxWCond_KeyPress);
             // 
             // PanelType
             // 

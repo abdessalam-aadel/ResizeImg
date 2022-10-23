@@ -215,5 +215,21 @@ namespace ResizeImg
         {
             IsCheckedTIF = RdButtonTif.Checked ? true : false;
         }
+
+        // Start methode : Not Enter a Key String just a Key Number
+        private static void Not_KeyString(KeyPressEventArgs e)
+        {
+            if (e.KeyChar < 48 || e.KeyChar > 57)
+            {
+                // if you press the BACKSPACE key, the Handled property is set to false, 
+                e.Handled = e.KeyChar == 8 ? false : true;
+            }
+        }
+
+        private void TxtW_KeyPress(object sender, KeyPressEventArgs e) => Not_KeyString(e);
+
+        private void TxtH_KeyPress(object sender, KeyPressEventArgs e) => Not_KeyString(e);
+
+        private void TxtBoxWCond_KeyPress(object sender, KeyPressEventArgs e) => Not_KeyString(e);
     }
 }
