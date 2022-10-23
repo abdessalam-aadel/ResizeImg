@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.BtnStart = new System.Windows.Forms.Button();
             this.BtnLoad = new System.Windows.Forms.Button();
@@ -50,9 +51,15 @@
             this.PanelQuality = new System.Windows.Forms.Panel();
             this.CheckBoxCond = new System.Windows.Forms.CheckBox();
             this.TxtBoxWCond = new System.Windows.Forms.TextBox();
+            this.PanelType = new System.Windows.Forms.Panel();
+            this.RdButtonTif = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ImgDone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoToGithub)).BeginInit();
             this.PanelQuality.SuspendLayout();
+            this.PanelType.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnStart
@@ -66,7 +73,7 @@
             this.BtnStart.Location = new System.Drawing.Point(12, 56);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(447, 56);
-            this.BtnStart.TabIndex = 0;
+            this.BtnStart.TabIndex = 13;
             this.BtnStart.Text = "Start Resize";
             this.BtnStart.UseVisualStyleBackColor = false;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
@@ -78,7 +85,7 @@
             this.BtnLoad.Location = new System.Drawing.Point(384, 10);
             this.BtnLoad.Name = "BtnLoad";
             this.BtnLoad.Size = new System.Drawing.Size(75, 20);
-            this.BtnLoad.TabIndex = 1;
+            this.BtnLoad.TabIndex = 5;
             this.BtnLoad.Text = "Load ...";
             this.BtnLoad.UseVisualStyleBackColor = true;
             this.BtnLoad.Click += new System.EventHandler(this.BtnLoad_Click);
@@ -89,7 +96,7 @@
             this.TxtBoxLoad.Location = new System.Drawing.Point(53, 12);
             this.TxtBoxLoad.Name = "TxtBoxLoad";
             this.TxtBoxLoad.Size = new System.Drawing.Size(325, 18);
-            this.TxtBoxLoad.TabIndex = 2;
+            this.TxtBoxLoad.TabIndex = 4;
             this.TxtBoxLoad.Text = "Chose your folder ...";
             // 
             // TxtTotales
@@ -134,7 +141,7 @@
             // TxtH
             // 
             this.TxtH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtH.Location = new System.Drawing.Point(313, 33);
+            this.TxtH.Location = new System.Drawing.Point(161, 33);
             this.TxtH.Name = "TxtH";
             this.TxtH.Size = new System.Drawing.Size(41, 18);
             this.TxtH.TabIndex = 7;
@@ -156,7 +163,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(266, 36);
+            this.label3.Location = new System.Drawing.Point(114, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 9;
@@ -166,7 +173,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label4.ForeColor = System.Drawing.Color.Navy;
             this.label4.Location = new System.Drawing.Point(12, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
@@ -179,7 +186,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(354, 36);
+            this.label5.Location = new System.Drawing.Point(202, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
             this.label5.TabIndex = 12;
@@ -229,6 +236,7 @@
             this.GoToGithub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.GoToGithub.TabIndex = 16;
             this.GoToGithub.TabStop = false;
+            this.toolTip1.SetToolTip(this.GoToGithub, "Go to Github.");
             this.GoToGithub.Click += new System.EventHandler(this.GoToGithub_Click);
             // 
             // RdButtonSQ
@@ -241,7 +249,7 @@
             this.RdButtonSQ.Location = new System.Drawing.Point(3, 4);
             this.RdButtonSQ.Name = "RdButtonSQ";
             this.RdButtonSQ.Size = new System.Drawing.Size(103, 17);
-            this.RdButtonSQ.TabIndex = 17;
+            this.RdButtonSQ.TabIndex = 9;
             this.RdButtonSQ.TabStop = true;
             this.RdButtonSQ.Text = "Standard Quality";
             this.RdButtonSQ.UseVisualStyleBackColor = true;
@@ -256,7 +264,7 @@
             this.RdButtonHQ.Location = new System.Drawing.Point(112, 3);
             this.RdButtonHQ.Name = "RdButtonHQ";
             this.RdButtonHQ.Size = new System.Drawing.Size(84, 17);
-            this.RdButtonHQ.TabIndex = 18;
+            this.RdButtonHQ.TabIndex = 10;
             this.RdButtonHQ.Text = "Hight Quality";
             this.RdButtonHQ.UseVisualStyleBackColor = true;
             // 
@@ -268,7 +276,7 @@
             this.PanelQuality.Location = new System.Drawing.Point(12, 114);
             this.PanelQuality.Name = "PanelQuality";
             this.PanelQuality.Size = new System.Drawing.Size(208, 24);
-            this.PanelQuality.TabIndex = 19;
+            this.PanelQuality.TabIndex = 8;
             // 
             // CheckBoxCond
             // 
@@ -280,7 +288,7 @@
             this.CheckBoxCond.Location = new System.Drawing.Point(280, 117);
             this.CheckBoxCond.Name = "CheckBoxCond";
             this.CheckBoxCond.Size = new System.Drawing.Size(135, 17);
-            this.CheckBoxCond.TabIndex = 20;
+            this.CheckBoxCond.TabIndex = 11;
             this.CheckBoxCond.Text = "Add Condition: width < ";
             this.CheckBoxCond.UseVisualStyleBackColor = false;
             this.CheckBoxCond.CheckedChanged += new System.EventHandler(this.CheckBoxCond_CheckedChanged);
@@ -292,14 +300,69 @@
             this.TxtBoxWCond.Location = new System.Drawing.Point(408, 116);
             this.TxtBoxWCond.Name = "TxtBoxWCond";
             this.TxtBoxWCond.Size = new System.Drawing.Size(51, 18);
-            this.TxtBoxWCond.TabIndex = 21;
+            this.TxtBoxWCond.TabIndex = 12;
             this.TxtBoxWCond.Text = "3000";
+            // 
+            // PanelType
+            // 
+            this.PanelType.BackColor = System.Drawing.Color.Transparent;
+            this.PanelType.Controls.Add(this.label8);
+            this.PanelType.Controls.Add(this.RdButtonTif);
+            this.PanelType.Controls.Add(this.radioButton2);
+            this.PanelType.Location = new System.Drawing.Point(219, 33);
+            this.PanelType.Name = "PanelType";
+            this.PanelType.Size = new System.Drawing.Size(240, 24);
+            this.PanelType.TabIndex = 1;
+            // 
+            // RdButtonTif
+            // 
+            this.RdButtonTif.AutoSize = true;
+            this.RdButtonTif.Checked = true;
+            this.RdButtonTif.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RdButtonTif.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RdButtonTif.ForeColor = System.Drawing.Color.DimGray;
+            this.RdButtonTif.Location = new System.Drawing.Point(97, 3);
+            this.RdButtonTif.Name = "RdButtonTif";
+            this.RdButtonTif.Size = new System.Drawing.Size(39, 17);
+            this.RdButtonTif.TabIndex = 2;
+            this.RdButtonTif.TabStop = true;
+            this.RdButtonTif.Text = "TIF";
+            this.toolTip1.SetToolTip(this.RdButtonTif, "Chose your type befor you click Load Button.");
+            this.RdButtonTif.UseVisualStyleBackColor = true;
+            this.RdButtonTif.CheckedChanged += new System.EventHandler(this.RdButtonTif_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButton2.Location = new System.Drawing.Point(145, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(99, 17);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.Text = "All format image";
+            this.toolTip1.SetToolTip(this.radioButton2, "Chose your type befor you click Load Button.");
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Navy;
+            this.label8.Location = new System.Drawing.Point(8, 5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Chose your type :";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 163);
+            this.Controls.Add(this.BtnStart);
+            this.Controls.Add(this.PanelType);
             this.Controls.Add(this.TxtBoxWCond);
             this.Controls.Add(this.CheckBoxCond);
             this.Controls.Add(this.label1);
@@ -316,7 +379,6 @@
             this.Controls.Add(this.TxtTotales);
             this.Controls.Add(this.TxtBoxLoad);
             this.Controls.Add(this.BtnLoad);
-            this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -330,6 +392,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GoToGithub)).EndInit();
             this.PanelQuality.ResumeLayout(false);
             this.PanelQuality.PerformLayout();
+            this.PanelType.ResumeLayout(false);
+            this.PanelType.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,6 +422,11 @@
         private System.Windows.Forms.Panel PanelQuality;
         private System.Windows.Forms.CheckBox CheckBoxCond;
         private System.Windows.Forms.TextBox TxtBoxWCond;
+        private System.Windows.Forms.Panel PanelType;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton RdButtonTif;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

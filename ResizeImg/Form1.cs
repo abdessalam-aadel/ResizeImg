@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Drawing.Text;
+using System.Linq;
 
 namespace ResizeImg
 {
@@ -23,10 +24,12 @@ namespace ResizeImg
         int fileCount = 0;
         string selected_path;
 
-        // Create boolean variable to check if the radio button is checked or not
+        // Create boolean variable to check if the radio button of Quality is checked or not
         bool IsCheckedSQ = true;
         // Create boolean variable to check if the CheckBox (Add condition) is checked or not
         bool IsCheckedCond = false;
+        // Create boolean variable to check if the radio button of Type is checked or not
+        public static bool IsCheckedTIF = true;
         
         private void AddPrivateFontCollection()
         {
@@ -63,7 +66,21 @@ namespace ResizeImg
         // and bring out to Array of string
         public static int SearchDirectoryTree(string path, out string[] IMGfiles)
         {
-            IMGfiles = Directory.GetFiles(path, "*.tif", SearchOption.AllDirectories);
+            if(IsCheckedTIF)
+            {
+                IMGfiles = Directory.GetFiles(path, "*.tif", SearchOption.AllDirectories);
+            }
+            else
+            {
+                var IMGfilesvar = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
+                    .Where(s => s.EndsWith(".jpg") || 
+                                s.EndsWith(".jpeg") || 
+                                s.EndsWith(".png") || 
+                                s.EndsWith(".tif") || 
+                                s.EndsWith(".bmp"));
+                // Convert var to Array
+                IMGfiles = IMGfilesvar.ToArray();
+            }
             return IMGfiles.Length;
         }
 
@@ -114,7 +131,7 @@ namespace ResizeImg
                 Cursor = Cursors.Default;
                 LabelDone.Text = "";
                 ImgDone.Visible = false;
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Exception message",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -192,6 +209,11 @@ namespace ResizeImg
                 IsCheckedCond = false;
                 TxtBoxWCond.Enabled = false;
             }
+        }
+
+        private void RdButtonTif_CheckedChanged(object sender, EventArgs e)
+        {
+            IsCheckedTIF = RdButtonTif.Checked ? true : false;
         }
     }
 }
